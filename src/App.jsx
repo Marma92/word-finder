@@ -60,14 +60,14 @@ function WordFinder() {
             />
           ))}
         </div>
-
+          <div className="alphabet-filter-title"><h2>Exclusions</h2></div>
         <div className="alphabet-filter">
+          
           {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
             <button
               key={letter}
-              className={`letter-button ${
-                excludedLetters.has(letter) ? "excluded" : ""
-              }`}
+              className={`letter-button ${excludedLetters.has(letter) ? "excluded" : ""
+                }`}
               onClick={() => toggleExcluded(letter)}
             >
               {letter}

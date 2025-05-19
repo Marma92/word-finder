@@ -10,13 +10,11 @@ html, body, #root {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(to bottom right, #e3e3f1, #f3e5f5); */
     padding: 20px;
     box-sizing: border-box;
 }  
 
 .wordfinder-card {
-    /* background: white; */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -65,7 +63,6 @@ html, body, #root {
 
   /* Results */
 .results {
-    /* background: #f8f8ff; */
     padding: 15px;
     border-radius: 8px;
     max-height: 200px;
@@ -97,6 +94,14 @@ html, body, #root {
     margin-top: 10px;
 }
 
+.alphabet-filter-title{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .alphabet-filter {
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +115,6 @@ html, body, #root {
     border-radius: 4px;
     padding: 6px 10px;
     font-size: 1rem;
-    /* background: white; */
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
 }
