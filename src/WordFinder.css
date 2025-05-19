@@ -2,7 +2,7 @@
 html, body, #root {
     height: 100%;
     margin: 0;
-  }
+}
 
 .wordfinder-container {
     position: fixed;
@@ -10,44 +10,44 @@ html, body, #root {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom right, #e3e3f1, #f3e5f5);
+    /* background: linear-gradient(to bottom right, #e3e3f1, #f3e5f5); */
     padding: 20px;
     box-sizing: border-box;
-  }  
-  
-  .wordfinder-card {
-    background: white;
+}  
+
+.wordfinder-card {
+    /* background: white; */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
     font-family: sans-serif;
-  }
-  
+}
+
   /* Typography */
-  .wordfinder-card h1 {
+.wordfinder-card h1 {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #4b0082;
-  }
-  
-  .wordfinder-card h2 {
+}
+
+.wordfinder-card h2 {
     margin-bottom: 10px;
     font-size: 1.1rem;
     color: #333;
-  }
-  
+}
+
   /* Inputs */
-  .inputs {
+.inputs {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-  }
-  
-  .letter-input {
+}
+
+.letter-input {
     width: 48px;
     height: 48px;
     font-size: 1.5rem;
@@ -56,44 +56,71 @@ html, body, #root {
     border-radius: 8px;
     transition: border-color 0.3s;
     text-transform: uppercase;
-  }
-  
-  .letter-input:focus {
+}
+
+.letter-input:focus {
     outline: none;
     border-color: #4b0082;
-  }
-  
+}
+
   /* Results */
-  .results {
-    background: #f8f8ff;
+.results {
+    /* background: #f8f8ff; */
     padding: 15px;
     border-radius: 8px;
     max-height: 200px;
     overflow-y: auto;
-  }
-  
-  .results ul {
+}
+
+.results ul {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 6px;
-  }
-  
-  .results li {
+}
+
+.results li {
     font-family: monospace;
     color: #333;
-    background: #e6e6ff;
+    /* background: #e6e6ff; */
     padding: 4px 8px;
     border-radius: 4px;
     text-align: center;
-  }
-  
-  .empty {
+}
+
+.empty {
     font-style: italic;
     color: #888;
     text-align: center;
     margin-top: 10px;
-  }
-   
+}
+
+.alphabet-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.letter-button {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 1rem;
+    /* background: white; */
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.letter-button:hover {
+    background: #eee;
+}
+
+.letter-button.excluded {
+    background: #ffdddd;
+    color: #a00;
+    border-color: #d00;
+}

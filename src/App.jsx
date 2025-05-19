@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./WordFinder.css"; // You'll create this CSS file
+import "./WordFinder.css";
 
 function WordFinder() {
   const [letters, setLetters] = useState(["", "", "", "", ""]);
   const [wordList, setWordList] = useState([]);
+  const [excludedLetters, setExcludedLetters] = useState(new Set());
 
   useEffect(() => {
     fetch("/french5.txt")
@@ -21,10 +22,26 @@ function WordFinder() {
     setLetters(newLetters);
   };
 
+  const toggleExcluded = (letter) => {
+    const newSet = new Set(excludedLetters);
+    if (newSet.has(letter)) {
+      newSet.delete(letter);
+    } else {
+      newSet.add(letter);
+    }
+    setExcludedLetters(newSet);
+  };
+
   const getMatchingWords = () => {
     const pattern = letters.map((c) => (c === "" ? "." : c)).join("");
     const regex = new RegExp("^" + pattern + "$");
-    return wordList.filter((word) => regex.test(word));
+    return wordList.filter((word) => {
+      if (!regex.test(word)) return false;
+      for (let letter of excludedLetters) {
+        if (word.includes(letter)) return false;
+      }
+      return true;
+    });
   };
 
   return (
@@ -43,6 +60,21 @@ function WordFinder() {
             />
           ))}
         </div>
+
+        <div className="alphabet-filter">
+          {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
+            <button
+              key={letter}
+              className={`letter-button ${
+                excludedLetters.has(letter) ? "excluded" : ""
+              }`}
+              onClick={() => toggleExcluded(letter)}
+            >
+              {letter}
+            </button>
+          ))}
+        </div>
+
         <div className="results">
           <h2>Suggestions :</h2>
           <ul>
