@@ -7,20 +7,23 @@ html, body, #root {
 .wordfinder-container {
     position: fixed;
     inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
 }  
 
 .wordfinder-card {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
     width: 100%;
     font-family: sans-serif;
+    grid-column: 2;
+    align-self: center;
 }
 
   /* Typography */
@@ -129,6 +132,59 @@ html, body, #root {
     border-color: #d00;
 }
 
+/* Side Panels */
+.instructions-panel, .ad-panel {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    font-family: sans-serif;
+    align-self: start;
+}
+
+.instructions-panel {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    max-width: 300px;
+    justify-self: flex-end;
+    margin-right: 20px;
+    margin-block-end: auto;
+}
+
+.ad-panel {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    max-width: 300px;
+    justify-self: flex-end;
+    margin-right: 20px;
+    margin-block-start: auto;
+    margin-block-end: auto;
+}
+
+.instructions-panel h3, .ad-panel h3 {
+    margin: 0 0 15px 0;
+    color: #4b0082;
+    font-size: 1.1rem;
+}
+
+.instructions-panel ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.instructions-panel li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.ad-content {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}
+
 /* Footer */
 .footer {
     position: fixed;
@@ -142,4 +198,35 @@ html, body, #root {
     color: #999;
     border-top: 1px solid #eee;
     backdrop-filter: blur(10px);
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .wordfinder-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto auto;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .wordfinder-card {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .instructions-panel {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .ad-panel {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    
+    .footer {
+        grid-row: 5;
+    }
 }

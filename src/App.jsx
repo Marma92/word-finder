@@ -46,6 +46,15 @@ function WordFinder() {
 
   return (
     <div className="wordfinder-container">
+      <div className="instructions-panel">
+        <h3>Mode d'emploi:</h3>
+        <ul>
+          <li>Saisissez les lettres connues dans les cases</li>
+          <li>Cliquez sur les lettres à exclure</li>
+          <li>Les mots potentiels apparaîtront automatiquement</li>
+        </ul>
+      </div>
+      
       <div className="wordfinder-card">
         <h1>Chercheur de mots (5 lettres)</h1>
         <div className="inputs">
@@ -87,6 +96,15 @@ function WordFinder() {
           )}
         </div>
       </div>
+      
+      <div className="ad-panel">
+        <h3>Publicité <br/>(désactivez adblock pour soutenir le développeur)</h3>
+        <div className="ad-content">
+          <p>Espace publicitaire</p>
+          <p>Votre message ici</p>
+        </div>
+      </div>
+      
       <footer className="footer">
         {new Date().getFullYear()} fait avec ❤️ par <a href="https://github.com/Marma92" target="_blank" rel="noopener noreferrer">Marma92</a>
       </footer>
