@@ -128,3 +128,18 @@ html, body, #root {
     color: #a00;
     border-color: #d00;
 }
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    border-top: 1px solid #eee;
+    backdrop-filter: blur(10px);
+}

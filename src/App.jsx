@@ -87,6 +87,9 @@ function WordFinder() {
           )}
         </div>
       </div>
+      <footer className="footer">
+        {new Date().getFullYear()} fait avec ❤️ par <a href="https://github.com/Marma92" target="_blank" rel="noopener noreferrer">Marma92</a>
+      </footer>
     </div>
   );
 }
